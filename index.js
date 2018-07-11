@@ -1,12 +1,13 @@
 const dotenv = require('dotenv').config({ path: 'variables.env' });
 const colors = require('colors');
 const setup = require('./setup');
+const logger = require('./logger');
 // run setup
 try{
     setup.init()
 }catch(err){
-    console.error(`Critical Error - Server Stoppping ${err}`);
+    logger.error(`Critical Error - Server Stoppping ${err}`);
     process.exit();
 }
 
-  console.log('Server Started');
+logger.log('Server Started');
